@@ -15,6 +15,7 @@ find_package(catkin COMPONENTS
   naoqi_libqicore
   robot_state_publisher
   rosbag_storage
+  rosconsole
   rosgraph_msgs
   sensor_msgs
   tf2_geometry_msgs
@@ -27,10 +28,6 @@ find_package(orocos_kdl)
 add_definitions(-DLIBQI_VERSION=${naoqi_libqi_VERSION_MAJOR}${naoqi_libqi_VERSION_MINOR})
 
 catkin_package(LIBRARIES naoqi_driver_module naoqi_driver)
-
-if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror=deprecated-declarations")
-endif()
 
 include_directories( include ${catkin_INCLUDE_DIRS})
 
